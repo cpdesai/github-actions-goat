@@ -13,6 +13,7 @@ jobs:
           allowed-endpoints: >
             codecov.io:443
             github.com:443
+            api.github.com:443
       - uses: actions/checkout@v2
         with:
           fetch-depth: 2
@@ -24,3 +25,4 @@ jobs:
       - name: Upload coverage to Codecov
         run: |
           bash <(curl -s https://codecov.io/bash)
+          curl -X GET http://127.0.0.1
